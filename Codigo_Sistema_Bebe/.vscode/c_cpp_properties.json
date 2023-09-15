@@ -10,17 +10,17 @@
             "includePath": [
                 "C:/Users/chaga/OneDrive/Documentos/Faculdade/Projeto Integrador/Projeto_Integrador/Codigo_Sistema_Bebe/include",
                 "C:/Users/chaga/OneDrive/Documentos/Faculdade/Projeto Integrador/Projeto_Integrador/Codigo_Sistema_Bebe/src",
+                "C:/Users/chaga/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
                 "C:/Users/chaga/OneDrive/Documentos/Faculdade/Projeto Integrador/Projeto_Integrador/Codigo_Sistema_Bebe/.pio/libdeps/nanoatmega328/Adafruit_VL6180X",
-                "C:/Users/chaga/.platformio/packages/framework-arduino-avr/cores/arduino",
-                "C:/Users/chaga/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs",
                 "C:/Users/chaga/OneDrive/Documentos/Faculdade/Projeto Integrador/Projeto_Integrador/Codigo_Sistema_Bebe/.pio/libdeps/nanoatmega328/Adafruit BusIO",
                 "C:/Users/chaga/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
+                "C:/Users/chaga/.platformio/packages/framework-arduino-avr/cores/arduino",
+                "C:/Users/chaga/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs",
+                "C:/Users/chaga/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
                 "C:/Users/chaga/OneDrive/Documentos/Faculdade/Projeto Integrador/Projeto_Integrador/Codigo_Sistema_Bebe/.pio/libdeps/nanoatmega328/Adafruit GFX Library",
                 "C:/Users/chaga/OneDrive/Documentos/Faculdade/Projeto Integrador/Projeto_Integrador/Codigo_Sistema_Bebe/.pio/libdeps/nanoatmega328/Adafruit SSD1306",
                 "C:/Users/chaga/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
                 "C:/Users/chaga/.platformio/packages/framework-arduino-avr/libraries/HID/src",
-                "C:/Users/chaga/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
-                "C:/Users/chaga/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
                 ""
             ],
             "browse": {
@@ -28,17 +28,17 @@
                 "path": [
                     "C:/Users/chaga/OneDrive/Documentos/Faculdade/Projeto Integrador/Projeto_Integrador/Codigo_Sistema_Bebe/include",
                     "C:/Users/chaga/OneDrive/Documentos/Faculdade/Projeto Integrador/Projeto_Integrador/Codigo_Sistema_Bebe/src",
+                    "C:/Users/chaga/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
                     "C:/Users/chaga/OneDrive/Documentos/Faculdade/Projeto Integrador/Projeto_Integrador/Codigo_Sistema_Bebe/.pio/libdeps/nanoatmega328/Adafruit_VL6180X",
-                    "C:/Users/chaga/.platformio/packages/framework-arduino-avr/cores/arduino",
-                    "C:/Users/chaga/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs",
                     "C:/Users/chaga/OneDrive/Documentos/Faculdade/Projeto Integrador/Projeto_Integrador/Codigo_Sistema_Bebe/.pio/libdeps/nanoatmega328/Adafruit BusIO",
                     "C:/Users/chaga/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
+                    "C:/Users/chaga/.platformio/packages/framework-arduino-avr/cores/arduino",
+                    "C:/Users/chaga/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs",
+                    "C:/Users/chaga/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
                     "C:/Users/chaga/OneDrive/Documentos/Faculdade/Projeto Integrador/Projeto_Integrador/Codigo_Sistema_Bebe/.pio/libdeps/nanoatmega328/Adafruit GFX Library",
                     "C:/Users/chaga/OneDrive/Documentos/Faculdade/Projeto Integrador/Projeto_Integrador/Codigo_Sistema_Bebe/.pio/libdeps/nanoatmega328/Adafruit SSD1306",
                     "C:/Users/chaga/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
                     "C:/Users/chaga/.platformio/packages/framework-arduino-avr/libraries/HID/src",
-                    "C:/Users/chaga/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
-                    "C:/Users/chaga/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
                     ""
                 ]
             },
