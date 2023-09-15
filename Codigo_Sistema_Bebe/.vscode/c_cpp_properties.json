@@ -1,0 +1,64 @@
+//
+// !!! WARNING !!! AUTO-GENERATED FILE!
+// PLEASE DO NOT MODIFY IT AND USE "platformio.ini":
+// https://docs.platformio.org/page/projectconf/section_env_build.html#build-flags
+//
+{
+    "configurations": [
+        {
+            "name": "PlatformIO",
+            "includePath": [
+                "C:/Users/chaga/OneDrive/Documentos/Faculdade/Projeto Integrador/Projeto_Integrador/Codigo_Sistema_Bebe/include",
+                "C:/Users/chaga/OneDrive/Documentos/Faculdade/Projeto Integrador/Projeto_Integrador/Codigo_Sistema_Bebe/src",
+                "C:/Users/chaga/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
+                "C:/Users/chaga/OneDrive/Documentos/Faculdade/Projeto Integrador/Projeto_Integrador/Codigo_Sistema_Bebe/.pio/libdeps/nanoatmega328/Adafruit_VL6180X",
+                "C:/Users/chaga/OneDrive/Documentos/Faculdade/Projeto Integrador/Projeto_Integrador/Codigo_Sistema_Bebe/.pio/libdeps/nanoatmega328/Adafruit BusIO",
+                "C:/Users/chaga/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
+                "C:/Users/chaga/.platformio/packages/framework-arduino-avr/cores/arduino",
+                "C:/Users/chaga/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs",
+                "C:/Users/chaga/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                "C:/Users/chaga/OneDrive/Documentos/Faculdade/Projeto Integrador/Projeto_Integrador/Codigo_Sistema_Bebe/.pio/libdeps/nanoatmega328/Adafruit GFX Library",
+                "C:/Users/chaga/OneDrive/Documentos/Faculdade/Projeto Integrador/Projeto_Integrador/Codigo_Sistema_Bebe/.pio/libdeps/nanoatmega328/Adafruit SSD1306",
+                "C:/Users/chaga/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
+                "C:/Users/chaga/.platformio/packages/framework-arduino-avr/libraries/HID/src",
+                ""
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "path": [
+                    "C:/Users/chaga/OneDrive/Documentos/Faculdade/Projeto Integrador/Projeto_Integrador/Codigo_Sistema_Bebe/include",
+                    "C:/Users/chaga/OneDrive/Documentos/Faculdade/Projeto Integrador/Projeto_Integrador/Codigo_Sistema_Bebe/src",
+                    "C:/Users/chaga/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
+                    "C:/Users/chaga/OneDrive/Documentos/Faculdade/Projeto Integrador/Projeto_Integrador/Codigo_Sistema_Bebe/.pio/libdeps/nanoatmega328/Adafruit_VL6180X",
+                    "C:/Users/chaga/OneDrive/Documentos/Faculdade/Projeto Integrador/Projeto_Integrador/Codigo_Sistema_Bebe/.pio/libdeps/nanoatmega328/Adafruit BusIO",
+                    "C:/Users/chaga/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
+                    "C:/Users/chaga/.platformio/packages/framework-arduino-avr/cores/arduino",
+                    "C:/Users/chaga/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs",
+                    "C:/Users/chaga/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                    "C:/Users/chaga/OneDrive/Documentos/Faculdade/Projeto Integrador/Projeto_Integrador/Codigo_Sistema_Bebe/.pio/libdeps/nanoatmega328/Adafruit GFX Library",
+                    "C:/Users/chaga/OneDrive/Documentos/Faculdade/Projeto Integrador/Projeto_Integrador/Codigo_Sistema_Bebe/.pio/libdeps/nanoatmega328/Adafruit SSD1306",
+                    "C:/Users/chaga/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
+                    "C:/Users/chaga/.platformio/packages/framework-arduino-avr/libraries/HID/src",
+                    ""
+                ]
+            },
+            "defines": [
+                "PLATFORMIO=60111",
+                "ARDUINO_AVR_NANO",
+                "F_CPU=16000000L",
+                "ARDUINO_ARCH_AVR",
+                "ARDUINO=10808",
+                "__AVR_ATmega328P__",
+                ""
+            ],
+            "cStandard": "gnu11",
+            "cppStandard": "gnu++11",
+            "compilerPath": "C:/Users/chaga/.platformio/packages/toolchain-atmelavr/bin/avr-gcc.exe",
+            "compilerArgs": [
+                "-mmcu=atmega328p",
+                ""
+            ]
+        }
+    ],
+    "version": 4
+}
