@@ -16,10 +16,21 @@ void setup() {
 }
 
 void loop() {
-  //while()
-  // put your main code here, to run repeatedly:
+
+  if(!digitalRead(CONECT)){
+    Serial.println("Esperando para conectar...");
+    while(1){
+      if(digitalRead(CONECT)){
+        Serial.println("Conectado");
+        break;
+      }
+    }
+  }
+
   if(MyBlue.available()){
-    //Serial.println(MyBlue.read());
+    String mensagem = String(MyBlue.read());
+    Serial.println("Mensagem recebida: " + mensagem);
+    MyBlue.print("Recebido");
   }
 }
 
