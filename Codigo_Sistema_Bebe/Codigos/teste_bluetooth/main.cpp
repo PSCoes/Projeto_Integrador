@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#include <Adafruit_VL6180X.h>
+//#include <Adafruit_VL6180X.h>
 #include <SoftwareSerial.h>
 
 #define COMAND 9
