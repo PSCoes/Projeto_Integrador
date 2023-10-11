@@ -2,11 +2,15 @@
 #include <SPI.h>
 #include <Adafruit_VL6180X.h>
 
+double x[15];
+double valor = 0;
+/*
 double xp2 = 0;
 double xp1 = 0;
 double x   = 0;
 double xf1 = 0;
 double xf2 = 0;
+*/
 
 int i = 0;
 
@@ -39,9 +43,30 @@ void loop() {
   uint8_t status = vl.readRangeStatus();
 
   if (status == VL6180X_ERROR_NONE) {
+    valor = 0;
+    if(x[0] != 0){
+      Serial.println(valor);
+      
+    }
+    for(int i = 0;i<16;i++){
+      if(i==15){
+        x[i] = range;
+      }else{
+        x[i] = x[i+1];
+      }
+      valor = valor + x[i];
+    }
+    valor = valor/15;
+    }
     //Serial.print("Range: "); 
-    Serial.println(range);
-  }else{Serial.println(200);}
+    //Serial.println(range);
+  }else{
+    xp2 = xp1;
+    xp1 = x;
+    x = xf1;
+    xf1 = xf2;
+    xf2 = 200;
+    Serial.println(200);}
 
   // Some error occurred, print it out!
   /*
