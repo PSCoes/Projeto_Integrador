@@ -9,17 +9,28 @@ SoftwareSerial MyBlue(2,3); // RX|TX
 
 void setup() {
   // put your setup code here, to run once:
-  MyBlue.begin(9600);
+  MyBlue.begin(38400);
   Serial.begin(9600);
   pinMode(COMAND, OUTPUT);
   pinMode(CONECT, INPUT);
 }
 
 void loop() {
-  //while()
-  // put your main code here, to run repeatedly:
+
+  if(!digitalRead(CONECT)){
+    Serial.println("Esperando para conectar...");
+    while(1){
+      if(digitalRead(CONECT)){
+        Serial.println("Conectado");
+        break;
+      }
+    }
+  }
+
   if(MyBlue.available()){
-    //Serial.println(MyBlue.read());
+    String mensagem = String(MyBlue.read());
+    Serial.println("Mensagem recebida: " + mensagem);
+    MyBlue.print("Recebido");
   }
 }
 
