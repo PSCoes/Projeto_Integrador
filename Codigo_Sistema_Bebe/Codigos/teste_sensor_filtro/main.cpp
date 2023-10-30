@@ -1,6 +1,9 @@
 #include <Wire.h>
 #include <SPI.h>
 #include <Adafruit_VL6180X.h>
+#include <ESP8266WiFi.h>
+#include <ESP8266WebServer.h>
+#include <DNSServer.h>
 
 double x[15];
 double valor = 0;

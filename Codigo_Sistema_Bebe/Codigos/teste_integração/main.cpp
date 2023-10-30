@@ -30,15 +30,27 @@ SDA X D2
 
 
 // Constantes do filtro de medição
-float medicao = 0;
-float xn1 = 0;
-float yn1 = 0;
-float yn2 = 0;
+double medicao = 0;
+double xn1 = 0;
+double yn1 = 0;
+double yn2 = 0;
 int k = 0;
 int i = 0;
 
+// Constantes de frequência
+bool positivo = 1;
+double freq = 0;
+double freq2 = 0;
+double freq1 = 0;
+double t0 = 0;
+double t1 = 0;
+double T1 = 0;
+double T2 = 0;
+
 // Criação de um objeto da classe do sensor
 Adafruit_VL6180X vl = Adafruit_VL6180X();
+
+
 
 // Configuração do hotspot
 const char* ssid = "Boneco Resusci"; // Nome do seu ponto de acesso
@@ -50,14 +62,10 @@ WiFiServer server(80);
 void setup() {
   Serial.begin(115200);
   delay(10);
-
-    // wait for serial port to open on native usb devices
-  while (!Serial) {
-    delay(1);
-  }
+  
   // Teste de conexão do sensor
   Serial.println("Adafruit VL6180x test!");
-  if (! vl.begin()) {
+  if (!vl.begin()) {
     Serial.println("Failed to find sensor");
     while (1);
   }
@@ -91,14 +99,35 @@ void loop() {
     }
 
   // Compute the filtered signal
-  float yn = 1.656*yn1 - 0.6859*yn2 + 0.01568*medicao + 0.01383*xn1;
+  double yn = 1.656*yn1 - 0.6859*yn2 + 0.01568*medicao + 0.01383*xn1;
 
   delay(1);
   xn1 = medicao;
   yn2 = yn1;
   yn1 = yn;
-  
 
+  yn = yn/10.0;
+
+  if(positivo && ((yn) < 4)){
+    positivo = 0;
+    t0 = t1;
+    t1 = millis();
+    T1 = t1-t0;
+    
+  }else if((!positivo) && ((yn)>4)){
+    positivo = 1;
+    t0 = t1;
+    t1 = millis();
+    T2 = t1-t0;
+    freq = 60/((T1+T2)/1000);
+    
+    
+  }
+
+  
+  
+  
+  
   if(k % 3 == 0){
     // This extra conditional statement is here to reduce
     // the number of times the data is sent through the serial port
@@ -106,28 +135,30 @@ void loop() {
     // messes with the sampling frequency
   
     // Output
-    Serial.print(medicao/10.0);
+    //Serial.print(medicao/10.0);
+    Serial.print("Distância: ");
+    Serial.print(yn);
     Serial.print(" ");
-    Serial.println(yn/10.0);
+    Serial.print("Frequência: ");
+    Serial.println(freq);
   }
-  k = k+1;
 
 
   // Verificar se há clientes
   WiFiClient client = server.available();
   if (client) {
-    Serial.println("Novo cliente conectado");
+    //Serial.println("Novo cliente conectado");
 
     // Responder à solicitação do cliente
     client.println("HTTP/1.1 200 OK");
     client.println("Content-Type: text/html");
     client.println();
-    client.println(String(yn));
+    client.println(yn);
     client.println();
     
     // Fechar a conexão com o cliente
     client.stop();
-    Serial.println("Cliente desconectado");
+    //Serial.println("Cliente desconectado");
   }
 }
 
