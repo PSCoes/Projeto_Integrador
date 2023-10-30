@@ -1,16 +1,13 @@
 #include <Wire.h>
 #include <SPI.h>
 #include <Adafruit_VL6180X.h>
+#include <ESP8266WiFi.h>
+#include <ESP8266WebServer.h>
+#include <DNSServer.h>
 
 double x[15];
 double valor = 0;
-/*
-double xp2 = 0;
-double xp1 = 0;
-double x   = 0;
-double xf1 = 0;
-double xf2 = 0;
-*/
+
 float medicao = 0;
 float xn1 = 0;
 float yn1 = 0;

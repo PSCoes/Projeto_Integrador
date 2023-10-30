@@ -1,37 +1,39 @@
-#include <Arduino.h>
-#include <Adafruit_VL6180X.h>
-#include <SoftwareSerial.h>
+#include <ESP8266WiFi.h>
+#include <ESP8266WebServer.h>
+#include <DNSServer.h>
 
-#define COMAND 9
-#define CONECT 8
+int i = 0;
+const char* apSSID = "Boneco Ressuci";
+ESP8266WebServer server(80);
 
-SoftwareSerial MyBlue(2,3); // RX|TX
+void handleRoot() {
+  // Obter o endereço IP do cliente
+  IPAddress clientIP = server.client().remoteIP();
+  Serial.print("Endereço IP do cliente: ");
+  Serial.println(clientIP);
+
+  server.send(200, "text/plain", String(i));
+}
 
 void setup() {
-  // put your setup code here, to run once:
-  MyBlue.begin(38400);
-  Serial.begin(9600);
-  pinMode(COMAND, OUTPUT);
-  pinMode(CONECT, INPUT);
+  Serial.begin(115200);
+  delay(10);
+
+  // Configurar a ESP-12E como ponto de acesso
+  WiFi.softAP(apSSID);
+
+  Serial.println();
+  Serial.print("Ponto de Acesso Wi-Fi: ");
+  Serial.println(apSSID);
+
+  // Configurar o servidor
+  server.on("/", HTTP_GET, handleRoot);
+  server.begin();
 }
 
 void loop() {
-
-  if(!digitalRead(CONECT)){
-    Serial.println("Esperando para conectar...");
-    while(1){
-      if(digitalRead(CONECT)){
-        Serial.println("Conectado");
-        break;
-      }
-    }
-  }
-
-  if(MyBlue.available()){
-    String mensagem = String(MyBlue.read());
-    Serial.println("Mensagem recebida: " + mensagem);
-    MyBlue.print("Recebido");
-  }
+  i++;
+  server.handleClient();
 }
 
-// Código incompleto
+
