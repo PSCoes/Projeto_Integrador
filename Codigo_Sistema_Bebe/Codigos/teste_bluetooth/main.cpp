@@ -35,5 +35,3 @@ void loop() {
   i++;
   server.handleClient();
 }
-
-
