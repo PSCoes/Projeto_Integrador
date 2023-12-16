@@ -1,8 +1,3 @@
-// code by Martyn Currie.
-// To enable AT mode connect the EN pin of the HC05 
-// to 3.3V before powering the HC05.  
-// Caution, do not connect EN to 5V.
-
 /*
 
 Conexão do sensor com a ESP8266:
@@ -87,7 +82,7 @@ void setup() {
   }
 
 void loop() {
-
+  // Leitura de distância do sensor
   uint8_t range = vl.readRange();
   uint8_t status = vl.readRangeStatus();
 
@@ -108,13 +103,13 @@ void loop() {
 
   yn = yn/10.0;
 
-  if(positivo && ((yn) < 4)){
+  if(positivo && ((yn) < 3.5)){
     positivo = 0;
     t0 = t1;
     t1 = millis();
     T1 = t1-t0;
     
-  }else if((!positivo) && ((yn)>4)){
+  }else if((!positivo) && ((yn)>3.5)){
     positivo = 1;
     t0 = t1;
     t1 = millis();
@@ -125,9 +120,6 @@ void loop() {
   }
 
   
-  
-  
-  
   if(k % 3 == 0){
     // This extra conditional statement is here to reduce
     // the number of times the data is sent through the serial port
@@ -137,7 +129,7 @@ void loop() {
     // Output
     //Serial.print(medicao/10.0);
     Serial.print("Distância: ");
-    Serial.print(yn);
+    Serial.print(String(yn) + ";" + freq);
     Serial.print(" ");
     Serial.print("Frequência: ");
     Serial.println(freq);
@@ -147,18 +139,16 @@ void loop() {
   // Verificar se há clientes
   WiFiClient client = server.available();
   if (client) {
-    //Serial.println("Novo cliente conectado");
 
-    // Responder à solicitação do cliente
+    // Responde à solicitação do cliente
     client.println("HTTP/1.1 200 OK");
     client.println("Content-Type: text/html");
     client.println();
-    client.println(yn);
+    client.println(String(yn) + ";" + freq);
     client.println();
     
     // Fechar a conexão com o cliente
     client.stop();
-    //Serial.println("Cliente desconectado");
   }
 }
 
